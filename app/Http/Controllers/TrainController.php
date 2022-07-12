@@ -10,9 +10,8 @@ class TrainController extends Controller
 {
     public function index(){
 
-        $trains = "öre?";
-        //Train::where('departure_time', date("Y-m-d"))->get();
+        $trains = Train::where('departure_time', date("Y-m-d"))->get();
 
-        return view('home',compact($trains));
+        return view('home',compact('trains'));
     }
 }
